@@ -46,23 +46,22 @@ void Delay1ms(unsigned long msec);	/* Function to count Delay in 1ms */
 void EnableInterrupts(void);	/* Function to enable Interrupts */
 void WaitForASLow(void);	/* Function to read AS input and waits for signal to be low */
 void WaitForASHigh(void);	/* Function to read AS input and waits for signal to be high */
-void SetVT(void);					/* Function to set VT high */
-void ClearVT(void);				/* Function to clear VT high */
-void SetReady(void);			/* Function to set Ready high */
+void SetVT(void);		/* Function to set VT high */
+void ClearVT(void);		/* Function to clear VT high */
+void SetReady(void);		/* Function to set Ready high */
 void ClearReady(void);		/* Function to clear Ready low */
 
 // 3. Subroutines Section
 // MAIN: Mandatory for a C Program to be executable
 int main(void)
 {
-	TExaS_Init(SW_PIN_PF40, LED_PIN_PF31,ScopeOn);  /* Activate grader and set system clock to 80 MHz */
+  TExaS_Init(SW_PIN_PF40, LED_PIN_PF31,ScopeOn);  /* Activate grader and set system clock to 80 MHz */
   PortF_Init();                  /* Init port PF4 PF3 PF1 */
   EnableInterrupts();            /* Enable interrupts for the grader */
 	
   while(1)
-	{ 
-		
-		// Follows the nine steps list above
+  { 
+    // Follows the nine steps list above
     // a) Ready signal goes high
     // b) wait for switch to be pressed
     // c) Ready signal goes low
@@ -72,17 +71,18 @@ int main(void)
     // g) VT signal goes high
     // h) wait 250ms
     // i) VT signal goes low
-		
-		SetReady();
-		WaitForASLow();
-		ClearReady();
-		Delay1ms(10);
+	  
+   SetReady();
+   WaitForASLow();
+   ClearReady();
+   Delay1ms(10);
 
-		WaitForASHigh();
-		Delay1ms(250);
-		SetVT();
-		Delay1ms(250);	
-		ClearVT();
+   WaitForASHigh();
+   Delay1ms(250);
+   SetVT();
+   Delay1ms(250);	
+   ClearVT();
+	  
   }
 }
 // Subroutine to initialize port F pins for input and output
@@ -92,7 +92,7 @@ int main(void)
 // Notes: ...
 void PortF_Init(void)
 { 
-	volatile unsigned long delay;
+  volatile unsigned long delay;
   SYSCTL_RCGC2_R |= 0x00000020;      // 1) F clock
   delay = SYSCTL_RCGC2_R;            // delay to allow clock to stabilize     
   GPIO_PORTF_AMSEL_R &= 0x00;        // 2) disable analog function
@@ -154,7 +154,6 @@ void WaitForASHigh(void)
 // Notes:   friendly means it does not affect other bits in the port
 void SetVT(void)
 {
-// write this function
 	GPIO_PORTF_DATA_R |= (1<<1);
 }
 
