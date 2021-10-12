@@ -20,8 +20,8 @@
 // FUNCTION PROTOTYPES: Each subroutine defined
 void DisableInterrupts(void); /* Disable interrupts */
 void EnableInterrupts(void);  /* Enable interrupts */
-void SW_Init(void);						/* Switch Initalization */
-void LED_Init(void);					/* LED Initalization */
+void SW_Init(void);	/* Switch Initalization */
+void LED_Init(void);	/* LED Initalization */
 void Delay_1ms(unsigned long time);	/* Delay Function */
 
 // ***** 3. Subroutines Section *****
@@ -33,10 +33,9 @@ void Delay_1ms(unsigned long time);	/* Delay Function */
 // Lab8_artist.pdf (compatible with many various readers like Adobe Acrobat).
 int main(void)
 { 
-//**********************************************************************
-// The following version tests input on PE0 and output on PE1
-//**********************************************************************
-  
+	//**********************************************************************
+	// The following version tests input on PE0 and output on PE1
+	//**********************************************************************
 	volatile unsigned long delay = 0;	/* Local variable to store the Delay Function */
 	TExaS_Init(SW_PIN_PE0, LED_PIN_PE1, ScopeOn);  /* Activate grader and set system clock to 80 MHz */
   
@@ -45,12 +44,13 @@ int main(void)
 	
 	SW_Init();	/* Switch Initialization */
 	LED_Init();	/* LED Initialization */
-  EnableInterrupts();	/* Enable interrupts for the grader */
-  
+  	EnableInterrupts();	/* Enable interrupts for the grader */
+	
+	
 	while(1)
 	{
 		if(GPIO_PORTE_DATA_R & (1<<0))
-    {
+		{
 			GPIO_PORTE_DATA_R ^= (1<<1);	/* Toggle LED */
 			Delay_1ms(100);	/* Delay 100 ms */
 		}
@@ -58,7 +58,7 @@ int main(void)
 		{
 			GPIO_PORTE_DATA_R |= (1<<1);	/* Turn ON LED */
 		}
-  }
+	}
 }
 
 
