@@ -1,4 +1,4 @@
-# Embedded System Shape the World 
+# Embedded System Shape The World 
 
 All these labs/projects/programs are implemented using:
 
