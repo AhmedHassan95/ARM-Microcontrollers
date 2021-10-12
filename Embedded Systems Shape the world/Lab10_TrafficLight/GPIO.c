@@ -19,7 +19,7 @@
 /*******************************************************************************
  * [Function Name]: PortF_Init
  *
- * [Description]: 	Function to initialize PORTF Pins PF1, and PF3
+ * [Description]: Function to initialize PORTF Pins PF1, and PF3
  *
  * [Args]: None
  *
@@ -44,7 +44,7 @@ void PortF_Init(void)
 /*******************************************************************************
  * [Function Name]: PortE_Init
  *
- * [Description]: 	Function to initialize PORTE Pins PE0,PE1, and PE2
+ * [Description]: Function to initialize PORTE Pins PE0,PE1, and PE2
  *
  * [Args]: None
  *
@@ -68,7 +68,7 @@ void PortE_Init(void)
 /*******************************************************************************
  * [Function Name]: PortB_Init
  *
- * [Description]: 	Function to initialize PORTB PE0-5
+ * [Description]: Function to initialize PORTB PE0-5
  *
  * [Args]: None
  *
