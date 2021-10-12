@@ -21,15 +21,15 @@
  *
  * [Description]: 	Function to initialize PORTF Pins PF1, and PF3
  *
- * [Args]:					None
+ * [Args]: None
  *
- * [in]			  			None
+ * [in] None
  *
- * [out]		  			None
+ * [out] None
  *
- * [in/out]		 			None
+ * [in/out] None
  *
- * [Returns]:       None
+ * [Returns]: None
  *******************************************************************************/
 void PortF_Init(void)
 {
@@ -46,11 +46,11 @@ void PortF_Init(void)
  *
  * [Description]: 	Function to initialize PORTE Pins PE0,PE1, and PE2
  *
- * [Args]:					None
+ * [Args]: None
  *
- * [in]			  			None
+ * [in] 	None
  *
- * [out]		  			None
+ * [out] None
  *
  * [in/out]		 			None
  *
