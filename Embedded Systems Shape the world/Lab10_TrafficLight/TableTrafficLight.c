@@ -4,6 +4,7 @@
 // Index implementation of a Moore finite state machine to operate a traffic light.  
 // Daniel Valvano, Jonathan Valvano
 // January 15, 2016
+//
 // Solution Author: Ahmed Hassan
 // Date: September 10,2021
 
@@ -37,12 +38,12 @@
 #define HurryUP4   8	/* Turn Off Red Led in Pedestrian way "Second Flash" */
 #define HurryUP5   9	/* Turn on Red Led in Pedestrian way "Third Flash" */
 
-#define OFF				 						0x00
-#define RED  		   						0x02
-#define GREEN   	 						0x08
-#define LIGHTS		 						GPIO_PORTB_DATA_R
-#define PEDESTRIAN_LIGHTS     GPIO_PORTF_DATA_R
-#define SENSORS								GPIO_PORTE_DATA_R
+#define OFF			0x00
+#define RED  		   	0x02
+#define GREEN   	 	0x08
+#define LIGHTS		 	GPIO_PORTB_DATA_R
+#define PEDESTRIAN_LIGHTS     	GPIO_PORTF_DATA_R
+#define SENSORS			GPIO_PORTE_DATA_R
 
 /* ***** 2. Global Declarations Section ***** */
 
@@ -53,9 +54,9 @@ void EnableInterrupts(void);  /* Enable interrupts */
 /* Linked data structure */
 struct State
 {
-  unsigned long Out;			/* 6 Pattern to output */
-	unsigned long WalkLed;	/* Pedestrians Leds */
-  unsigned long Time;			/* Delay in 10ms units */
+  unsigned long Out;		/* 6 Pattern to output */
+  unsigned long WalkLed;	/* Pedestrians Leds */
+  unsigned long Time;		/* Delay in 10ms units */
   unsigned long Next[8];	/* Next States for inputs 0,1,2,3,4,5,6,7 */  
 }; 
 
@@ -83,27 +84,27 @@ unsigned long Input; /* Local variable to store input from sensors in it */
 int main(void)
 { 
   volatile unsigned long delay;
-	TExaS_Init(SW_PIN_PE210, LED_PIN_PB543210,ScopeOff); /* Activate grader and set system clock to 80 MHz */	
+  TExaS_Init(SW_PIN_PE210, LED_PIN_PB543210,ScopeOff); /* Activate grader and set system clock to 80 MHz */	
   EnableInterrupts();
 	
   SYSCTL_RCGC2_R |= 0x00000032;     /* Activate clock for PORTF, PORTB, and PORTE */
   delay = SYSCTL_RCGC2_R;           /* Allow time for clock to start */
 	
-	PLL_Init();     	/* PLL Initialization 80 MHz */
-  SysTick_Init();   /* SysTick Initialization */
-	PortB_Init();			/* PORTB Initialization */
-	PortE_Init();			/* PORTE Initialization */
-	PortF_Init();			/* PORTF Initialization */
+  PLL_Init();     	/* PLL Initialization 80 MHz */
+  SysTick_Init();  	/* SysTick Initialization */
+  PortB_Init();		/* PORTB Initialization */
+  PortE_Init();		/* PORTE Initialization */
+  PortF_Init();		/* PORTF Initialization */
 
-	S = GoWest;	/* Initial State */
+  S = GoWest;	/* Initial State */
 	
   while(1)
-	{
-    LIGHTS = FSM[S].Out;  									/* Set lights */
-		PEDESTRIAN_LIGHTS  = FSM[S].WalkLed;  	/* Set lights */
-    SysTick_Wait10ms(FSM[S].Time);					/* Delay in ms units */
-    Input = (SENSORS & 0x07);    						/* Read sensors */
-    S = FSM[S].Next[Input];   							/* Update the current state */
+  {
+    LIGHTS = FSM[S].Out;  			/* Set lights */
+    PEDESTRIAN_LIGHTS  = FSM[S].WalkLed;  	/* Set lights */
+    SysTick_Wait10ms(FSM[S].Time);		/* Delay in ms units */
+    Input = (SENSORS & 0x07);    		/* Read sensors */
+    S = FSM[S].Next[Input];   			/* Update the current state */
   }
 }
 
