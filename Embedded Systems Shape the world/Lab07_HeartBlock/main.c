@@ -137,7 +137,6 @@ void WaitForASLow(void)
 // Outputs: None
 void WaitForASHigh(void)
 {
-	
 	if( (GPIO_PORTF_DATA_R & (1<<4)) )
 	{
 		return;
