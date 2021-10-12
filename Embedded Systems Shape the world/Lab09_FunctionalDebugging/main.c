@@ -37,17 +37,16 @@ For example, if your system detects a change in either PF4 or PF0 input,
 record PortF bits 4,1,0. If your system causes a change in PF1, record PortF bits 4,1,0. 
 
 If both PF4 and PF0 switch are not pressed, the PF1 output should be low.  
-If either PF4 or PF0 switches is pressed, the output toggles at 10 Hz (±10%). 
+If either PF4 or PF0 switches is pressed, the output toggles at 10 Hz (Â±10%). 
 Information collected in the Data array matches the I/O on PortF.
 50 data points are collected only on a change in input or a change in output.
 This means no adjacent elements in the array should be equal.
-
 */
 
 
 void PortF_Init(void)
 { 
-	volatile unsigned long delay;
+  volatile unsigned long delay;
   SYSCTL_RCGC2_R |= 0x00000020;     // 1) activate clock for Port F
   delay = SYSCTL_RCGC2_R;           // allow time for clock to start
   GPIO_PORTF_LOCK_R = 0x4C4F434B;   // 2) unlock GPIO Port F
@@ -59,7 +58,7 @@ void PortF_Init(void)
   GPIO_PORTF_AFSEL_R = 0x00;        // 6) disable alt funct on PF7-0
   GPIO_PORTF_PUR_R = 0x11;          // 7) enable pull-up on PF0 and PF4
   GPIO_PORTF_DEN_R = 0x1F;          // 8) enable digital I/O on PF4-0
-	GPIO_PORTF_DATA_R &= ~0x02;       // 9) Turn OFF LED at the beginning
+  GPIO_PORTF_DATA_R &= ~0x02;       // 9) Turn OFF LED at the beginning
 }
 
 /* Initialize SysTick with busy wait running at bus clock */
@@ -78,8 +77,8 @@ unsigned long Data[50];
 
 int main(void)
 {  
-	unsigned long i, last, now;
-	unsigned long flag = 0; /* Flag to prevent store unchanged data */
+  unsigned long i, last, now;
+  unsigned long flag = 0; /* Flag to prevent store unchanged data */
   TExaS_Init(SW_PIN_PF40, LED_PIN_PF1);  /* Activate grader and set system clock to 16 MHz */
   PortF_Init();   /* Initialize PF1 to output */
   SysTick_Init(); /* Initialize SysTick, runs at 16 MHz */
@@ -105,13 +104,13 @@ int main(void)
 		/* Store the changes in the Dump */
 		if(i<50 && flag == 1)
 		{
-      now = NVIC_ST_CURRENT_R;
-      Time[i] = (last-now)&0x00FFFFFF;  /* 24-bit time difference */
-      Data[i] = GPIO_PORTF_DATA_R&0x13; /* Record PF1 */
-      last = now;
-      i++;
-    }
-  }
+			now = NVIC_ST_CURRENT_R;
+			Time[i] = (last-now)&0x00FFFFFF;  /* 24-bit time difference */
+			Data[i] = GPIO_PORTF_DATA_R&0x13; /* Record PF1 */
+			last = now;
+			i++;
+		}
+	}
 }
 
 
@@ -128,10 +127,10 @@ int main(void)
 /* Delay Subroutine */
 void Delay(void)
 {
-	unsigned long volatile time;
-  time = 160000;		
+  unsigned long volatile time;
+  time = 160000;
   while(time)
-	{
+  {
     time--;
   }
 }
@@ -139,10 +138,10 @@ void Delay(void)
 /* Delay in 50 ms unites Subroutine */
 void Delay50ms(void)
 {
-	unsigned long volatile time;
+  unsigned long volatile time;
   time = 80000;		
   while(time)
-	{
+  {
     time--;
   }
 }
