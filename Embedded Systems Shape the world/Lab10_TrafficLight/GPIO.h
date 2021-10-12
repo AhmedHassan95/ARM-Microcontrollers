@@ -43,7 +43,7 @@ void PortF_Init(void);
  *
  * [Args]: None
  *
- * [in] 	None
+ * [in] None
  *
  * [out] None
  *
