@@ -22,51 +22,51 @@
  /*******************************************************************************
  * [Function Name]: PortF_Init
  *
- * [Description]: 	Function to initialize PORTF Pins PF1, and PF3
+ * [Description]: Function to initialize PORTF Pins PF1, and PF3
  *
- * [Args]:					None
+ * [Args]: None
  *
- * [in]			  			None
+ * [in] None
  *
- * [out]		  			None
+ * [out] None
  *
- * [in/out]		 			None
+ * [in/out] None
  *
- * [Returns]:       None
+ * [Returns]: None
  *******************************************************************************/
 void PortF_Init(void);
 
 /*******************************************************************************
  * [Function Name]: PortE_Init
  *
- * [Description]: 	Function to initialize PORTE Pins PE0,PE1, and PE2
+ * [Description]: Function to initialize PORTE Pins PE0,PE1, and PE2
  *
- * [Args]:					None
+ * [Args]: None
  *
- * [in]			  			None
+ * [in] 	None
  *
- * [out]		  			None
+ * [out] None
  *
- * [in/out]		 			None
+ * [in/out] None
  *
- * [Returns]:       None
+ * [Returns]: None
  *******************************************************************************/
 void PortE_Init(void);
 
 /*******************************************************************************
  * [Function Name]: PortB_Init
  *
- * [Description]: 	Function to initialize PORTB PE0-5
+ * [Description]: Function to initialize PORTB PE0-5
  *
- * [Args]:					None
+ * [Args]: None
  *
- * [in]			  			None
+ * [in] None
  *
- * [out]		  			None
+ * [out] None
  *
- * [in/out]		 			None
+ * [in/out] None
  *
- * [Returns]:       None
+ * [Returns]: None
  *******************************************************************************/
 void PortB_Init(void);
 
