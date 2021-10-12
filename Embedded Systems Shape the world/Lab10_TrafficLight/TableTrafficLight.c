@@ -31,7 +31,7 @@
 #define WaitWest   1	/* Turn on Yellow Led in West/East way and Red Leds in others */
 #define GoSouth    2	/* Turn on Green Led in South/North way and Red Leds in others */
 #define WaitSouth  3	/* Turn on Yellow Led in South/North way and Red Leds in others */
-#define Walk   		 4	/* Turn on Green Led in Pedestrian way and Red Leds in others */
+#define Walk   	   4	/* Turn on Green Led in Pedestrian way and Red Leds in others */
 #define HurryUP1   5	/* Turn on Red Led in Pedestrian way "First Flash" */
 #define HurryUP2   6	/* Turn Off Red Led in Pedestrian way "First Flash" */
 #define HurryUP3   7	/* Turn on Red Led in Pedestrian way "Second Flash" */
