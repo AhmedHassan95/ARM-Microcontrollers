@@ -48,20 +48,20 @@ void EnableInterrupts(void);
 // MAIN: Mandatory for a C Program to be executable
 int main(void)
 {    
-	TExaS_Init(SW_PIN_PF40,LED_PIN_PF321); // this initializes the TExaS grader lab 2
+  TExaS_Init(SW_PIN_PF40,LED_PIN_PF321); // this initializes the TExaS grader lab 2
   PortF_Init();        // Call initialization of port PF4 PF2    
   EnableInterrupts();  // The grader uses interrupts
 	
   while(1)
-	{
-		In = GPIO_PORTF_DATA_R&0x10; // read PF4 into In
+  {
+     In = GPIO_PORTF_DATA_R&0x10; // read PF4 into In
 		
     if(In == 0x00)
-		{              // zero means SW1 is pressed
+    {              // zero means SW1 is pressed
       GPIO_PORTF_DATA_R = 0x08;  // LED is green
-		} 
-		else
-		{              // 0x10 means SW1 is not pressed
+    } 
+    else
+    {              // 0x10 means SW1 is not pressed
       GPIO_PORTF_DATA_R = 0x02;  // LED is red
     }
     Delay();                     // wait 0.1 sec
@@ -78,7 +78,7 @@ int main(void)
 // Notes: These five pins are connected to hardware on the LaunchPad
 void PortF_Init(void)
 { 
-	volatile unsigned long delay;
+  volatile unsigned long delay;
   SYSCTL_RCGC2_R |= 0x00000020;     // 1) F clock
   delay = SYSCTL_RCGC2_R;           // delay   
   GPIO_PORTF_LOCK_R = 0x4C4F434B;   // 2) unlock PortF PF0  
@@ -106,11 +106,11 @@ void PortF_Init(void)
 // Notes: ...
 void Delay(void)
 {
-	unsigned long volatile time;
+  unsigned long volatile time;
   time = 727240*200/91;  // 0.1sec
 	
   while(time)
-	{
-		time--;
+  {
+	  time--;
   }
 }
