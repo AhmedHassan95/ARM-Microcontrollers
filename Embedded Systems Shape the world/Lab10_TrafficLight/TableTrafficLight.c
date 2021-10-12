@@ -91,10 +91,10 @@ int main(void)
   delay = SYSCTL_RCGC2_R;           /* Allow time for clock to start */
 	
   PLL_Init();     	/* PLL Initialization 80 MHz */
-  SysTick_Init();   /* SysTick Initialization */
-  PortB_Init();			/* PORTB Initialization */
-  PortE_Init();			/* PORTE Initialization */
-  PortF_Init();			/* PORTF Initialization */
+  SysTick_Init();   	/* SysTick Initialization */
+  PortB_Init();		/* PORTB Initialization */
+  PortE_Init();		/* PORTE Initialization */
+  PortF_Init();		/* PORTF Initialization */
 
   S = GoW;	/* Initial State */
 	
