@@ -56,29 +56,29 @@ int main(void)
   PortF_Init();        // Call initialization of port PF4, PF3, PF2, PF1, PF0    
   EnableInterrupts();  // The grader uses interrupts
   
-	while(1)
-	{
+   while(1)
+   {
     SW1 = GPIO_PORTF_DATA_R&0x10;     // read PF4 into SW1
     SW2 = GPIO_PORTF_DATA_R&0x01;     // read PF0 into SW2
     
-		if(!(SW1||SW2))
-		{                     // both pressed
+    if(!(SW1||SW2))
+    {                     // both pressed
       GPIO_PORTF_DATA_R = 0x04;       // LED is blue
     } 
-		else
-		{                           
+    else
+    {                           
       if(!SW1)
-			{                // just SW1 pressed
+      {                // just SW1 pressed
         GPIO_PORTF_DATA_R = 0x02;     // LED is red
       } 
-			else
-			{                        
+       else
+       {                        
         if(!SW2)
-				{              // just SW2 pressed
+	{              // just SW2 pressed
           GPIO_PORTF_DATA_R = 0x08;   // LED is green
         }
-				else
-				{                        // neither switch
+	else
+	{                        // neither switch
           GPIO_PORTF_DATA_R = 0x00;   // LED is off
         }
       }
@@ -93,7 +93,7 @@ int main(void)
 // Notes: These five pins are connected to hardware on the LaunchPad
 void PortF_Init(void)
 { 
-	volatile unsigned long delay;
+  volatile unsigned long delay;
   SYSCTL_RCGC2_R |= 0x00000020;     // 1) F clock
   delay = SYSCTL_RCGC2_R;           // delay   
   GPIO_PORTF_LOCK_R = 0x4C4F434B;   // 2) unlock PortF PF0  
