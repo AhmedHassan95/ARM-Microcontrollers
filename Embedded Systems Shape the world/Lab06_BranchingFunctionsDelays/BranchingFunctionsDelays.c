@@ -34,28 +34,28 @@ void PortF_Init(void);				/* Function to Initialize PORTF */
 void Delay_100ms(unsigned long time);	/* Function to count Delay in ms units */
 
 int main(void)
-{ 
-	/* Initialization goes here */
-	unsigned long volatile delay;
+{
+  /* Initialization goes here */
+  unsigned long volatile delay;
   TExaS_Init(SW_PIN_PF4, LED_PIN_PF2);  /* Activate grader and set system clock to 80 MHz */
   EnableInterrupts();      		/* Enable interrupts for the grader */
-	PortF_Init();								/* PORTF Initialization */
+  PortF_Init();				/* PORTF Initialization */
 	
-	GPIO_PORTF_DATA_R |= 0x04; 	/* Turn On LED at the beginning */
+  GPIO_PORTF_DATA_R |= 0x04; 		/* Turn On LED at the beginning */
 	
   while(1)
-	{
+  {
     /* Body goes here */
-		Delay_100ms(1);
-		
-		if(! (GPIO_PORTF_DATA_R & (1<<4)) )
-		{
-			GPIO_PORTF_DATA_R ^= (1<<2);	/* Toggle LED */
-		}
-		else
-		{
-			/* Do Nothing */
-		}
+	  Delay_100ms(1);
+	  
+	if(! (GPIO_PORTF_DATA_R & (1<<4)) )
+	{
+		GPIO_PORTF_DATA_R ^= (1<<2);	/* Toggle LED */
+	}
+	else
+	{
+		/* Do Nothing */
+	}
   }
 }
 
