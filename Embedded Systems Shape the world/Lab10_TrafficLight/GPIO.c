@@ -48,13 +48,13 @@ void PortF_Init(void)
  *
  * [Args]: None
  *
- * [in] 	None
+ * [in] None
  *
  * [out] None
  *
- * [in/out]		 			None
+ * [in/out] None
  *
- * [Returns]:       None
+ * [Returns]: None
  *******************************************************************************/
 void PortE_Init(void)
 {
@@ -70,15 +70,15 @@ void PortE_Init(void)
  *
  * [Description]: 	Function to initialize PORTB PE0-5
  *
- * [Args]:					None
+ * [Args]: None
  *
- * [in]			  			None
+ * [in] None
  *
- * [out]		  			None
+ * [out] None
  *
- * [in/out]		 			None
+ * [in/out] None
  *
- * [Returns]:       None
+ * [Returns]: None
  *******************************************************************************/
 void PortB_Init(void)
 {
