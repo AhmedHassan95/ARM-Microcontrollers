@@ -8,7 +8,7 @@ This class is 8-weeks :
 - **UT.6.10x Embedded Systems - Shape The World: [Microcontroller Input/Output](https://www.edx.org/course/embedded-systems-shape-world-utaustinx-ut-6-10x)** includes Modules 1 to 10. \
   [**Certificate**](https://github.com/AhmedHassan95/ARM-Microcontrollers/blob/master/Embedded%20Systems%20-%20Shape%20The%20World%20Microcontroller%20InputOutput/UTAustinX%20UT.6.10x%20Certificate%20_%20edX.pdf) available.
 
-You can find a **[syllabus](syllabus.md)** of this course.
+- **You can find a **[syllabus](syllabus.md)** of this course.
 
 Every lab is given as an existant project with a grading system TExaS that remotely permits to evaluate my work (and push the grade on edX MOOC). \
 As a consequence, for each lab assignment, I completed an existant project given by the teaching staff with the requirements.
