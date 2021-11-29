@@ -1,6 +1,6 @@
 # Embedded Systems - Shape The World: Multi-Threaded Interfacing
 
-# MOOC Details
+## MOOC Details
 
 The second module of embedded systems MOOC based on an ARM Cortex-M4F microcontroller from the University of Texas at Austin through [**edX**](https://courses.edx.org/).
 
@@ -12,7 +12,7 @@ This class is 8-weeks :
 
 - You can find a **[syllabus](syllabus.md)** of this course.
 
-# Descriptions
+## Descriptions
 
 Every lab is given as an existant project with a grading system TExaS that remotely permits to evaluate my work (and push the grade on edX MOOC). \
 As a consequence, for each lab assignment, I completed an existant project given by the teaching staff with the requirements.
