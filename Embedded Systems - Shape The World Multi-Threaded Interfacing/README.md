@@ -1,4 +1,4 @@
-# Embedded Systems - Shape The World: Microcontroller Input/Output
+# Embedded Systems - Shape The World: Multi-Threaded Interfacing
 
 The second module of embedded systems MOOC based on an ARM Cortex-M4F microcontroller from the University of Texas at Austin through [**edX**](https://courses.edx.org/).
 
