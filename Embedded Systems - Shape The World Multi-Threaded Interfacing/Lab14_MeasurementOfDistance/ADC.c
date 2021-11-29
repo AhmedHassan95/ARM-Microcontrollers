@@ -32,8 +32,8 @@
 // SS3 interrupts: enabled but not promoted to controller
 void ADC0_Init(void)
 { 
-	volatile unsigned long delay;
-  SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOE; // 1) activate clock for Port E
+  volatile unsigned long delay;
+  SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOE;			 // 1) activate clock for Port E
   delay = SYSCTL_RCGC2_R;         			// allow time for clock to stabilize
   GPIO_PORTE_DIR_R &= ~0x04;      			// 2) make PE2 input
   GPIO_PORTE_AFSEL_R |= 0x04;     			// 3) enable alternate function on PE2
@@ -57,9 +57,9 @@ void ADC0_Init(void)
 unsigned long ADC0_In(void)
 {  
   unsigned long result;
-  ADC0_PSSI_R = 0x0008;            		// 1) initiate SS3
-  while((ADC0_RIS_R & 0x08) == 0){};  // 2) wait for conversion done
+  ADC0_PSSI_R = 0x0008;            	// 1) initiate SS3
+  while((ADC0_RIS_R & 0x08) == 0){};  	// 2) wait for conversion done
   result = ADC0_SSFIFO3_R & 0xFFF;   	// 3) read result
-  ADC0_ISC_R = 0x0008;             		// 4) acknowledge completion
+  ADC0_ISC_R = 0x0008;             	// 4) acknowledge completion
   return result;
 }
