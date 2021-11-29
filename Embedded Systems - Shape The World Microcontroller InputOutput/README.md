@@ -1,10 +1,10 @@
 # Embedded Systems - Shape The World: Microcontroller Input/Output
 
-A first embedded systems MOOC based on an ARM Cortex-M4F microcontroller from the University of Texas at Austin through [**edX**](https://courses.edx.org/).
+A first module embedded systems MOOC based on an ARM Cortex-M4F microcontroller from the University of Texas at Austin through [**edX**](https://courses.edx.org/).
 
 Date: September, 2021
 
-This 16-week class is split into two 8-week classes : 
+This class is 8-weeks : 
 - **UT.6.10x Embedded Systems - Shape The World: [Microcontroller Input/Output](https://www.edx.org/course/embedded-systems-shape-world-utaustinx-ut-6-10x)** includes Modules 1 to 10. \
   [**Certificate**](https://github.com/AhmedHassan95/ARM-Microcontrollers/blob/master/Embedded%20Systems%20-%20Shape%20The%20World%20Microcontroller%20InputOutput/UTAustinX%20UT.6.10x%20Certificate%20_%20edX.pdf) available.
 
