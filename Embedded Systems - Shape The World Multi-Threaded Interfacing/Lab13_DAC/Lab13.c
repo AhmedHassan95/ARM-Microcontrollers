@@ -23,48 +23,48 @@ void delay(unsigned long msec); /* Delay in msec unit */
 
 int main(void)
 { 
-	unsigned char Pressed_Key;		/* Variable to store the current key state */
-	unsigned char Previous_state;	/* Variable to store the previous key state */
-	// Real Lab13 
-	// for the real board grader to work 
-	// you must connect PD3 to your DAC output
+	  unsigned char Pressed_Key;		/* Variable to store the current key state */
+	  unsigned char Previous_state;		/* Variable to store the previous key state */
+	  // Real Lab13 
+	  // for the real board grader to work 
+	  // you must connect PD3 to your DAC output
 
-  TExaS_Init(SW_PIN_PE3210, DAC_PIN_PB3210,ScopeOn); // activate grader and set system clock to 80 MHz
-	
-	// PortE used for piano keys, PortB used for DAC        
-  DAC_Init();	
-	Sound_Init(); 
-  Piano_Init();	
-	EnableInterrupts();  /* Enable after all initialization are done */
-	
-  while(1)
-	{                
+	  TExaS_Init(SW_PIN_PE3210, DAC_PIN_PB3210,ScopeOn); // activate grader and set system clock to 80 MHz
+
+	  // PortE used for piano keys, PortB used for DAC        
+	  DAC_Init();	
+	  Sound_Init(); 
+	  Piano_Init();	
+	  EnableInterrupts();  /* Enable after all initialization are done */
+
+	  while(1)
+	  {                
 		// input from keys to select tone
 		// static testing, single step and record Vout 
-		
+
 		Pressed_Key = Piano_In(); 		/* Determine which key is pressed */
-		
+
 		if(Pressed_Key != Previous_state)
 		{
 			switch(Pressed_Key)
 			{
-				case 0: Sound_Off();							/* Turn off the Piano */			  
-								break;	
+				case 0: Sound_Off();			/* Turn off the Piano */			  
+					break;	
 				case 1: Sound_Tone(NOTE_C);      	/* Play C Hz wave */
-								break;
-				case 2: Sound_Tone(NOTE_D);      	/* Play D Hz wave	*/					
-								break;
+					break;
+				case 2: Sound_Tone(NOTE_D);      	/* Play D Hz wave */					
+					break;
 				case 4:	Sound_Tone(NOTE_E);      	/* Play E Hz wave */
-								break;
+					break;
 				case 8: Sound_Tone(NOTE_G);      	/* Play G Hz wave */
-								break;
-				default: Sound_Off();    					/* Turn off the Piano */ 
-								 break;
+					break;
+				default: Sound_Off();    		/* Turn off the Piano */ 
+					break;
 			}
 			delay(10);
 		}
 		Previous_state = Pressed_Key;
-	}
+  	}
 }
 
 // Inputs: Number of msec to delay
