@@ -14,7 +14,7 @@ Every lab is given as an existant project with a grading system TExaS that remot
 As a consequence, for each lab assignment, I completed an existant project given by the teaching staff with the requirements.
 
 My contributions include:
-- Gloabal declarations (essentially for ports) and/or declarations in header files. 
+- Global declarations (essentially for ports) and/or declarations in header files. 
 - Functions defintion if already declared by instructors.
 - Functions implementation otherwise.
 
