@@ -40,22 +40,21 @@ void UART_ConvertDistance(unsigned long n)
 	}
 	else
 	{
-			d = n / 1000;
-			String[0] = d + 0x30;
+		d = n / 1000;
+		String[0] = d + 0x30;
 			
-			String[1] = '.';
+		String[1] = '.';
 		
-			n = n % 1000;
-			d = n / 100;
-			String[2] = d + 0x30;
+		n = n % 1000;
+		d = n / 100;
+		String[2] = d + 0x30;
 			
-			n = n % 100;
-			d = n / 10;
-			String[3] = d + 0x30;
+		n = n % 100;
+		d = n / 10;
+		String[3] = d + 0x30;
 			
-			n = n % 10;
-			String[4] = n + 0x30;
-			
+		n = n % 10;
+		String[4] = n + 0x30;		
 	}
 	String[5] = ' ';
 	String[6] = 'c';
