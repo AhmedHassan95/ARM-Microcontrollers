@@ -15,17 +15,17 @@
 // Output: none
 void DAC_Init(void)
 {
-	volatile unsigned long delay;
+  volatile unsigned long delay;
 	
   SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOB;	/* 1) Activate clock on PORTB */
   delay = SYSCTL_RCGC2_R;              	/* delay */  
   GPIO_PORTB_AMSEL_R &= ~0x0F;         	/* 2) Disable analog function */
   GPIO_PORTB_PCTL_R &= ~0x0000FFFF;   	/* 3) GPIO clear bit PCTL */  
-  GPIO_PORTB_DIR_R |= 0x0F;         		/* 4) PB3 -- PB0 output */   
-	GPIO_PORTB_DR8R_R |= 0x0F;          	/* 5) Enable 8 mA drive on PB3 - PB0 */
+  GPIO_PORTB_DIR_R |= 0x0F;         	/* 4) PB3 -- PB0 output */   
+  GPIO_PORTB_DR8R_R |= 0x0F;          	/* 5) Enable 8 mA drive on PB3 - PB0 */
   GPIO_PORTB_AFSEL_R &= ~0x0F;         	/* 6) No alternate function */
-	GPIO_PORTB_DEN_R |= 0x0F;          		/* 7) Enable digital pins PB3-PB0 */       
-	GPIO_PORTB_DATA_R &= ~0x0F;         	/* 8) Initialize DAC to off */
+  GPIO_PORTB_DEN_R |= 0x0F;          	/* 7) Enable digital pins PB3-PB0 */       
+  GPIO_PORTB_DATA_R &= ~0x0F;         	/* 8) Initialize DAC to off */
 }
 
 
