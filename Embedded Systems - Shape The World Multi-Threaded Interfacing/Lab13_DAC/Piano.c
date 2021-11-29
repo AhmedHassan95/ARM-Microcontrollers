@@ -17,15 +17,15 @@
 // Output: none
 void Piano_Init(void)
 { 
-	volatile unsigned long  delay;
+  volatile unsigned long  delay;
   SYSCTL_RCGC2_R |= SYSCTL_RCGC2_GPIOE; /* 1) Activate clock for Port E */
-  delay = SYSCTL_RCGC2_R;           		/* 2) Allow time for clock to start */
+  delay = SYSCTL_RCGC2_R;           	/* 2) Allow time for clock to start */
   GPIO_PORTE_AMSEL_R &= ~0x0F;        	/* 3) Disable analog on PE3-0 */
   GPIO_PORTE_PCTL_R &= ~0x0000FFFF;   	/* 4) PCTL GPIO on PE3-0 */
   GPIO_PORTE_DIR_R &= ~0x0F;          	/* 5) PE3-0 input */
   GPIO_PORTE_AFSEL_R &= ~0x0F;        	/* 6) Disable alt funct on PE3-0 */
-  GPIO_PORTE_PDR_R |= 0x0F;         		/* 7) Pull down resistors on PE3-0 */
-  GPIO_PORTE_DEN_R |= 0x0F;          		/* 8) Enable digital I/O on PE3-0 */
+  GPIO_PORTE_PDR_R |= 0x0F;         	/* 7) Pull down resistors on PE3-0 */
+  GPIO_PORTE_DEN_R |= 0x0F;          	/* 8) Enable digital I/O on PE3-0 */
 }
 
 // **************Piano_In*********************
