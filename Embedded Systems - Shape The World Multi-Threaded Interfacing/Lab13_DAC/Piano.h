@@ -9,7 +9,7 @@
 #define NOTE_D		4257
 #define NOTE_E		3792
 #define NOTE_G		3187
-#define SILENT    0
+#define SILENT       0
 
 
 // **************Piano_Init*********************
