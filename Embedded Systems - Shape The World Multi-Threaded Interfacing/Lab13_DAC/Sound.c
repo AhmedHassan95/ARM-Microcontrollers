@@ -21,11 +21,11 @@ unsigned char Index;
 // Output: none
 void Sound_Init(void)
 {
-	NVIC_ST_CTRL_R = 0;         // Disable SysTick during setup
+  NVIC_ST_CTRL_R = 0;         // Disable SysTick during setup
   NVIC_ST_CURRENT_R = 0;      // Any write to current clears it
-	NVIC_ST_RELOAD_R = 0;
+  NVIC_ST_RELOAD_R = 0;
   NVIC_SYS_PRI3_R = (NVIC_SYS_PRI3_R&0x00FFFFFF) | 0x20000000; // Priority 1 
-	NVIC_ST_CTRL_R = 0x0007;  	// Enable SysTick with core clock and interrupts
+  NVIC_ST_CTRL_R = 0x0007;  	// Enable SysTick with core clock and interrupts
 }
 
 // **************Sound_Tone*********************
@@ -39,8 +39,8 @@ void Sound_Tone(unsigned long period)
 {
 	// this routine sets the RELOAD and starts SysTick
   Index = 0;
-	NVIC_ST_RELOAD_R = period-1; // Reload value
-	NVIC_ST_CTRL_R = 0x0007;  	 // Enable SysTick with core clock and interrupts
+  NVIC_ST_RELOAD_R = period-1; // Reload value
+  NVIC_ST_CTRL_R = 0x0007;  	 // Enable SysTick with core clock and interrupts
 }
 
 
@@ -50,8 +50,8 @@ void Sound_Tone(unsigned long period)
 void Sound_Off(void)
 {
  // this routine stops the sound output
-	NVIC_ST_RELOAD_R = 0;			// Reload value to generate the required pitch
-	GPIO_PORTB_DATA_R = 0x00;
+ NVIC_ST_RELOAD_R = 0;			// Reload value to generate the required pitch
+ GPIO_PORTB_DATA_R = 0x00;
 }
 
 // Interrupt service routine
