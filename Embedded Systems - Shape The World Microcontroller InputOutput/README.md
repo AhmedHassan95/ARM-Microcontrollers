@@ -1,6 +1,6 @@
 # Embedded Systems - Shape The World: Microcontroller Input/Output
 
-A first module embedded systems MOOC based on an ARM Cortex-M4F microcontroller from the University of Texas at Austin through [**edX**](https://courses.edx.org/).
+A first module of embedded systems MOOC based on an ARM Cortex-M4F microcontroller from the University of Texas at Austin through [**edX**](https://courses.edx.org/).
 
 Date: September, 2021
 
@@ -14,9 +14,9 @@ Every lab is given as an existant project with a grading system TExaS that remot
 As a consequence, for each lab assignment, I completed an existant project given by the teaching staff with the requirements.
 
 My contributions include:
-- gloabal declarations (essentially for ports) and/or declarations in header files. 
-- functions defintion if already declared by teachers.
-- functions implementation otherwise.
+- Gloabal declarations (essentially for ports) and/or declarations in header files. 
+- Functions defintion if already declared by instructors.
+- Functions implementation otherwise.
 
 In most of the cases, there are all these alternatives (except with the two first introduction labs).
 
