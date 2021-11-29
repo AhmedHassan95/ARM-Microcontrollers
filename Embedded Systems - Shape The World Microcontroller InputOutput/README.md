@@ -20,6 +20,14 @@ My contributions include:
 
 In most of the cases, there are all these alternatives (except with the two first introduction labs).
 
+
+## Requirements
+
+**[Kiel uVsion 4](https://www.keil.com/demo/eval/armv4.htm)** - All the code/debug were done on this IDE. \
+**[Stellaris/Tiva LaunchPad](http://www.ti.com/tool/ek-tm4c123gxl)** - Everything is meant to work on a EK-TM4C123G launchpad. \
+**[Electronic Components](http://edx-org-utaustinx.s3.amazonaws.com/UT601x/worldwide.html)** - Some labs requires a set of extra electronic parts.
+
+
 ## Common Files
 
 There are some file types which will appear in every lab assignment.
@@ -28,9 +36,3 @@ There are some file types which will appear in every lab assignment.
 `***.axf` `TExaS.h` `texas.o` - autograder files \
 `tm4c123gh6pm.h` - useful address definitions for launchpad \
 `startup.s` - assembly startup file
-
-## Requirements
-
-**[Kiel uVsion 4](https://www.keil.com/demo/eval/armv4.htm)** - All the code/debug were done on this IDE. \
-**[Stellaris/Tiva LaunchPad](http://www.ti.com/tool/ek-tm4c123gxl)** - Everything is meant to work on a EK-TM4C123G launchpad. \
-**[Electronic Components](http://edx-org-utaustinx.s3.amazonaws.com/UT601x/worldwide.html)** - Some labs requires a set of extra electronic parts.
