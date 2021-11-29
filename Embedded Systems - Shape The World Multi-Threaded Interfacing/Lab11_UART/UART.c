@@ -73,11 +73,11 @@ unsigned char UART_InCharNonBlocking(void)
 {
 	// as part of Lab 11, modify this program to use UART0 instead of UART1
   if((UART0_FR_R & UART_FR_RXFE) == 0)
-	{
+  {
     return((unsigned char)(UART0_DR_R&0xFF));
   }
-	else
-	{
+  else
+  {
     return 0;
   }
 }
@@ -103,16 +103,17 @@ void UART_OutChar(unsigned char data)
 // Backspace will remove last digit typed
 unsigned long UART_InUDec(void)
 {
-	unsigned long number=0, length=0;
-	char character;
+  unsigned long number=0, length=0;
+  char character;
   character = UART_InChar();
 	
   while(character != CR)
-	{ // accepts until <enter> is typed
-		// The next line checks that the input is a digit, 0-9.
-		// If the character is not 0-9, it is ignored and not echoed
+  { 
+	 // accepts until <enter> is typed
+	// The next line checks that the input is a digit, 0-9.
+	// If the character is not 0-9, it is ignored and not echoed
     if((character >= '0') && (character <= '9'))
-		{
+    {
       number = 10*number+(character-'0');   // this line overflows if above 4294967295
       length++;
       UART_OutChar(character);
@@ -120,7 +121,7 @@ unsigned long UART_InUDec(void)
 // If the input is a backspace, then the return number is
 // changed and a backspace is outputted to the screen
     else if((character == BS) && length)
-		{
+    {
       number /= 10;
       length--;
       UART_OutChar(character);
@@ -178,7 +179,6 @@ void UART_ConvertUDec(unsigned long n)
 			String[1] = ' ';
 			String[2] = ' ';
 			String[3] = n + 0x30;
-
 		}
 		else if(n < 100)
 		{
@@ -188,7 +188,6 @@ void UART_ConvertUDec(unsigned long n)
 			String[2] = d + 0x30;
 			n = n%10;
 			String[3] = n + 0x30;
-
 		}
 		else if(n < 1000)
 		{
@@ -202,8 +201,7 @@ void UART_ConvertUDec(unsigned long n)
 			String[2] = d + 0x30;
 			
 			n = n % 10;
-			String[3] = n + 0x30;
-			
+			String[3] = n + 0x30;	
 		}
 		else if(n < 10000)
 		{
@@ -219,8 +217,7 @@ void UART_ConvertUDec(unsigned long n)
 			String[2] = d + 0x30;
 			
 			n = n % 10;
-			String[3] = n + 0x30;
-			
+			String[3] = n + 0x30;	
 		}
 	}
 	String[4] = ' ';	/* Last character is a spcae */
@@ -265,22 +262,21 @@ void UART_ConvertDistance(unsigned long n)
 	}
 	else
 	{
-			d = n / 1000;
-			String[0] = d + 0x30;
+		d = n / 1000;
+		String[0] = d + 0x30;
 			
-			String[1] = '.';
+		String[1] = '.';
 		
-			n = n % 1000;
-			d = n / 100;
-			String[2] = d + 0x30;
+		n = n % 1000;
+		d = n / 100;
+		String[2] = d + 0x30;
 			
-			n = n % 100;
-			d = n / 10;
-			String[3] = d + 0x30;
+		n = n % 100;
+		d = n / 10;
+		String[3] = d + 0x30;
 			
-			n = n % 10;
-			String[4] = n + 0x30;
-			
+		n = n % 10;
+		String[4] = n + 0x30;			
 	}
 	String[5] = ' ';
 	String[6] = 'c';
