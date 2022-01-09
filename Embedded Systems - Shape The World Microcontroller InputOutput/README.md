@@ -7,7 +7,7 @@ The first module of embedded systems MOOC based on an ARM Cortex-M4F microcontro
 Date: September, 2021
 
 This class is 8-weeks : 
-- **You can find UT.6.10x Embedded Systems - Shape The World: [Microcontroller Input/Output](https://www.edx.org/course/embedded-systems-shape-world-utaustinx-ut-6-10x)** that includes Modules from 1 to 10. \
+- You can find UT.6.10x Embedded Systems - Shape The World: [Microcontroller Input/Output](https://www.edx.org/course/embedded-systems-shape-world-utaustinx-ut-6-10x) that includes Modules from 1 to 10. \
   [**Certificate**](https://github.com/AhmedHassan95/ARM-Microcontrollers/blob/master/Embedded%20Systems%20-%20Shape%20The%20World%20Microcontroller%20InputOutput/UTAustinX%20UT.6.10x%20Certificate%20_%20edX.pdf) available.
 
 - You can find a **[syllabus](syllabus.md)** of this course.
